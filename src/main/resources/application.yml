@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://db.c5u88ptogr4w.eu-north-1.rds.amazonaws.com:3306/lab5_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://db-spring-boot.c19mi8lie4w7.us-east-1.rds.amazonaws.com:3306/lab5_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
     username: denys
     password: Server1q23
     driver-class-name: com.mysql.cj.jdbc.Driver
