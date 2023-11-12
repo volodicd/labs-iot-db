@@ -28,6 +28,6 @@ phases:
 artifacts:
   files:
     - target/lab5-app.jar
-    - *.sh
+    - scripts/*.sh
     - appspec.yml
   discard-paths: yes
