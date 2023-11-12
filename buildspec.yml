@@ -1,0 +1,33 @@
+version: 0.2
+
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+
+    commands:
+      - echo Installing dependencies...
+      - apt update -y
+      - apt install -y mysql-client
+      - apt install -y openjdk-17-jdk
+      - apt install -y maven
+      
+  build:
+    commands:
+      - echo "Checking MySQL connection..."
+      - mysql -h "db-spring-boot.c19mi8lie4w7.us-east-1.rds.amazonaws.com" -P "3306" -u "denys" -p"Server1q23" -e "USE lab5_db" 2>/dev/null
+      - if [ $? -eq 0 ]; then echo "Connected to MySQL successfully."; else echo "Failed to connect to MySQL."; exit 1; fi
+      - echo "Building the Spring Boot application..."
+      - echo Building the Spring Boot application...
+      - mvn clean install
+  post_build:
+    commands:
+      - echo Build completed
+      
+artifacts:
+  files:
+    - target/lab5-app.jar
+    - scripts/*.sh
+    - appspec.yml
+  discard-paths: yes
