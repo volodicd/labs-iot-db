@@ -1,5 +1,5 @@
 steps:
-  - name: 'gcr.io/cloud-builders/apt'
+  - name: 'ubuntu'
     entrypoint: 'bash'
     args:
       - '-c'
@@ -22,7 +22,7 @@ steps:
           exit 1
         fi
 
-  - name: 'gcr.io/cloud-builders/maven'
+  - name: 'maven:3.8.4'
     entrypoint: 'bash'
     args:
       - '-c'
